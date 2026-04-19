@@ -7,7 +7,7 @@ import co.edu.unbosque.model.EquipoRepositoryArray;
 // jijijijiji
 public class EquipoController {
 	private final EquipoRepositoryArray repo;
-
+// si funciono
 	public EquipoController(EquipoRepositoryArray repo) {
 		this.repo = repo;
 	}
