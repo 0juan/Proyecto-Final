@@ -4,7 +4,7 @@ import co.edu.unbosque.dto.EquipoDTO;
 import co.edu.unbosque.mapper.EquipoMapper;
 import co.edu.unbosque.model.Equipo;
 import co.edu.unbosque.model.EquipoRepositoryArray;
-
+//aaa
 public class EquipoController {
 	private final EquipoRepositoryArray repo;
 
