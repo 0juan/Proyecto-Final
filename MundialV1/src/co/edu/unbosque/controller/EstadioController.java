@@ -1,9 +1,9 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.dto.EstadioDTO;
 import co.edu.unbosque.mapper.EstadioMapper;
 import co.edu.unbosque.model.Estadio;
 import co.edu.unbosque.model.EstadioRepositoryArray;
+import co.edu.unbosque.record.EstadioDTO;
 
 public class EstadioController {
 	private final EstadioRepositoryArray repo;

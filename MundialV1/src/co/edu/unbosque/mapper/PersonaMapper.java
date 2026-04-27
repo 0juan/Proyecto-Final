@@ -1,7 +1,7 @@
 package co.edu.unbosque.mapper;
 
-import co.edu.unbosque.dto.PersonaDTO;
 import co.edu.unbosque.model.Persona;
+import co.edu.unbosque.record.PersonaDTO;
 
 public class PersonaMapper {
 	public static Persona toEntity(PersonaDTO dto) {

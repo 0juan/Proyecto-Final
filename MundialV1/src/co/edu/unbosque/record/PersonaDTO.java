@@ -1,4 +1,4 @@
-package co.edu.unbosque.dto;
+package co.edu.unbosque.record;
 
 public class PersonaDTO {
 	private short idPersona;

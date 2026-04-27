@@ -1,7 +1,7 @@
 package co.edu.unbosque.mapper;
 
-import co.edu.unbosque.dto.EquipoDTO;
 import co.edu.unbosque.model.Equipo;
+import co.edu.unbosque.record.EquipoDTO;
 
 public class EquipoMapper { // DTO --- Entidad
 

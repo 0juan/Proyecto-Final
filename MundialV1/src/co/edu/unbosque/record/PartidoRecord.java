@@ -1,8 +1,8 @@
-package co.edu.unbosque.dto;
+package co.edu.unbosque.record;
 
 import java.time.LocalDate;
 
-public class PartidoDTO {
+public class PartidoRecord {
 	private String equipoLocalId;
 	private String equipoVisitanteId;
 	private LocalDate fechaPartido;

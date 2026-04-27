@@ -8,14 +8,14 @@ import co.edu.unbosque.controller.EquipoController;
 import co.edu.unbosque.controller.EstadioController;
 import co.edu.unbosque.controller.PartidoController;
 import co.edu.unbosque.controller.PersonaController;
-import co.edu.unbosque.dto.EquipoDTO;
-import co.edu.unbosque.dto.EstadioDTO;
-import co.edu.unbosque.dto.PartidoDTO;
-import co.edu.unbosque.dto.PersonaDTO;
 import co.edu.unbosque.model.EquipoRepositoryArray;
 import co.edu.unbosque.model.EstadioRepositoryArray;
 import co.edu.unbosque.model.PartidoRepositoryArray;
 import co.edu.unbosque.model.PersonaRepositoryArray;
+import co.edu.unbosque.record.EquipoDTO;
+import co.edu.unbosque.record.EstadioDTO;
+import co.edu.unbosque.record.PartidoRecord;
+import co.edu.unbosque.record.PersonaDTO;
 
 public class AplMenuPpalMundial {
 
@@ -463,14 +463,14 @@ public class AplMenuPpalMundial {
 		int marcadorVisitante = leerEntero("Marcador Equipo Visitante: ");
 		boolean estado = true;
 
-		PartidoDTO nuevo = new PartidoDTO(IdPartido, localId, visitanteId, fecha, marcadorLocal, marcadorVisitante,
+		PartidoRecord nuevo = new PartidoRecord(IdPartido, localId, visitanteId, fecha, marcadorLocal, marcadorVisitante,
 				estado);
 		boolean ok = partidoController.crear(nuevo);
 		System.out.println(ok ? "OK: partido creado." : "No se pudo crear.");
 	}
 
 	public static void listarPartido() {
-		PartidoDTO[] lista = partidoController.listar();
+		PartidoRecord[] lista = partidoController.listar();
 		if (lista == null || lista.length == 0) {
 			System.out.println("No hay registros.");
 			return;
@@ -479,14 +479,14 @@ public class AplMenuPpalMundial {
 		System.out.println("║                                  LISTA DE PARTIDOS                                     ║");
 		System.out.println("╠════════════════════════════════════════════════════════════════════════════════════════╣");
 		System.out.println("║ IdPartido: ║ LocalId: ║ VisitanteId: ║ Fecha partido: ║ Marc. L: ║ Marc. V: ║ Estado:  ║");
-		for (PartidoDTO p : lista)
+		for (PartidoRecord p : lista)
 			if (p != null)
 				System.out.println(formatearPartido(p));
 	}
 
 	public static void buscarPartido() {
 		int id = leerEntero("ID a buscar: ");
-		PartidoDTO dto = partidoController.buscarPorId(id);
+		PartidoRecord dto = partidoController.buscarPorId(id);
 		if (dto != null) {
 			System.out.println("\n╔════════════════════════════════════════════════════════════════════════════════════════╗");
 			System.out.println("║                                    RESULTADO DE BÚSQUEDA                               ║");
@@ -500,7 +500,7 @@ public class AplMenuPpalMundial {
 
 	public static void actualizarPartido() {
 		int partidoId = leerEntero("ID a actualizar: ");
-		PartidoDTO actual = partidoController.buscarPorId(partidoId);
+		PartidoRecord actual = partidoController.buscarPorId(partidoId);
 		if (actual == null) {
 			System.out.println("No existe un estadio con ese ID.");
 			return;
@@ -517,7 +517,7 @@ public class AplMenuPpalMundial {
 		int marcadorVisitante = leerEntero("Marcador Equipo Visitante: ");
 		boolean estado = true;
 
-		PartidoDTO nuevo = new PartidoDTO(partidoId, localId, visitanteId, fecha, marcadorLocal, marcadorVisitante,
+		PartidoRecord nuevo = new PartidoRecord(partidoId, localId, visitanteId, fecha, marcadorLocal, marcadorVisitante,
 				estado);
 		boolean ok = partidoController.actualizar(nuevo);
 		System.out.println(ok ? "OK: estadio actualizado." : "No se pudo actualizar.");
@@ -637,7 +637,7 @@ public class AplMenuPpalMundial {
 				(p.isEstadoPersona() ? "Activo" : "Inactivo"));
 	}
 
-	private static String formatearPartido(PartidoDTO p) {
+	private static String formatearPartido(PartidoRecord p) {
 		return String.format("║  %-9d ║ %-8d ║ %-12d ║ %-14s ║ %-8d ║ %-8d ║ %-8s ║", p.getIdPartido(), p.getLocalId(),
 				p.getVisitanteId(), p.getFechaPartido(), p.getMarcadorLocal(), p.getMarcadorVisitante(),
 				(p.isEstadoPartido() ? "Activo" : "Inactivo"));

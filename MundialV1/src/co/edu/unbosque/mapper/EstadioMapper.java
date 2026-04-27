@@ -1,7 +1,7 @@
 package co.edu.unbosque.mapper;
 
-import co.edu.unbosque.dto.EstadioDTO;
 import co.edu.unbosque.model.Estadio;
+import co.edu.unbosque.record.EstadioDTO;
 
 public class EstadioMapper { // DTO --- Entidad
 
