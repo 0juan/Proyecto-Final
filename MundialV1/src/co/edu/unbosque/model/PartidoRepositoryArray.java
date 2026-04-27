@@ -24,7 +24,7 @@ public class PartidoRepositoryArray {
 			return false;
 		if (size >= data.length)
 			return false;
-		if (buscarPorId(e.getIdPartido()) != null)
+		if (buscarPorId(e.getLocalId()) != null)
 			return false;
 		data[size++] = e;
 
@@ -46,7 +46,7 @@ public class PartidoRepositoryArray {
 	public boolean actualizar(Partido e) {
 		if (e == null)
 			return false;
-		int idx = indicePorId(e.getIdPartido());
+		int idx = indicePorId(e.getLocalId());
 		if (idx < 0)
 			return false;
 		data[idx] = e;
@@ -76,7 +76,7 @@ public class PartidoRepositoryArray {
 
 	private int indicePorId(int i2) {
 		for (int i = 0; i < size; i++) {
-			if (data[i].getIdPartido() == i2)
+			if (data[i].getLocalId() == i2)
 				return i;
 		}
 		return -1;
