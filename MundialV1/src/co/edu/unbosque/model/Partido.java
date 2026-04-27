@@ -3,47 +3,45 @@ package co.edu.unbosque.model;
 import java.time.LocalDate;
 
 public class Partido {
-	private int idPartido;
-	private int localId;
-	private int visitanteId;
+	private String equipoLocalId;
+	private String equipoVisitanteId;
 	private LocalDate fechaPartido;
+	private boolean estadoPartido;
+	private String tipoDePatido;
+	private String fase;
 	private int marcadorLocal;
 	private int marcadorVisitante;
-	private boolean estadoPartido;
+	private int localId;
 
-	public Partido(int idPartido, int localId, int visitanteId, LocalDate fechaPartido, int marcadorLocal,
-			int marcadorVisitante, boolean estadoPartido) {
-		this.idPartido = idPartido;
-		this.localId = localId;
-		this.visitanteId = visitanteId;
+	public Partido(String equipoLocalId, String equipoVisitanteId, LocalDate fechaPartido, boolean estadoPartido,
+			String tipoDePatido, String fase, int marcadorLocal, int marcadorVisitante, int localId) {
+		super();
+		this.equipoLocalId = equipoLocalId;
+		this.equipoVisitanteId = equipoVisitanteId;
 		this.fechaPartido = fechaPartido;
+		this.estadoPartido = estadoPartido;
+		this.tipoDePatido = tipoDePatido;
+		this.fase = fase;
 		this.marcadorLocal = marcadorLocal;
 		this.marcadorVisitante = marcadorVisitante;
-		this.estadoPartido = estadoPartido;
-	}
-
-	public int getIdPartido() {
-		return idPartido;
-	}
-
-	public void setIdPartido(int idPartido) {
-		this.idPartido = idPartido;
-	}
-
-	public int getLocalId() {
-		return localId;
-	}
-
-	public void setLocalId(int localId) {
 		this.localId = localId;
+
 	}
 
-	public int getVisitanteId() {
-		return visitanteId;
+	public String getEquipoLocalId() {
+		return equipoLocalId;
 	}
 
-	public void setVisitanteId(int visitanteId) {
-		this.visitanteId = visitanteId;
+	public void setEquipoLocalId(String equipoLocalId) {
+		this.equipoLocalId = equipoLocalId;
+	}
+
+	public String getEquipoVisitanteId() {
+		return equipoVisitanteId;
+	}
+
+	public void setEquipoVisitanteId(String equipoVisitanteId) {
+		this.equipoVisitanteId = equipoVisitanteId;
 	}
 
 	public LocalDate getFechaPartido() {
@@ -52,6 +50,30 @@ public class Partido {
 
 	public void setFechaPartido(LocalDate fechaPartido) {
 		this.fechaPartido = fechaPartido;
+	}
+
+	public boolean isEstadoPartido() {
+		return estadoPartido;
+	}
+
+	public void setEstadoPartido(boolean estadoPartido) {
+		this.estadoPartido = estadoPartido;
+	}
+
+	public String getTipoDePatido() {
+		return tipoDePatido;
+	}
+
+	public void setTipoDePatido(String tipoDePatido) {
+		this.tipoDePatido = tipoDePatido;
+	}
+
+	public String getFase() {
+		return fase;
+	}
+
+	public void setFase(String fase) {
+		this.fase = fase;
 	}
 
 	public int getMarcadorLocal() {
@@ -70,12 +92,12 @@ public class Partido {
 		this.marcadorVisitante = marcadorVisitante;
 	}
 
-	public boolean isEstadoPartido() {
-		return estadoPartido;
+	public int getLocalId() {
+		return localId;
 	}
 
-	public void setEstadoPartido(boolean estadoPartido) {
-		this.estadoPartido = estadoPartido;
+	public void setLocalId(int localId) {
+		this.localId = localId;
 	}
 
 }
