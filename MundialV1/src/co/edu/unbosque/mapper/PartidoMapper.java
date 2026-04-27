@@ -1,5 +1,5 @@
 package co.edu.unbosque.mapper;
-
+import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.Partido;
 import co.edu.unbosque.record.*;
 
@@ -11,8 +11,8 @@ public class PartidoMapper {
 	
 		return new PartidoRecord  (p.getFechaPartido(), p.isEstadoPartido(),p.getTipoDePatido(), p.getFase(),
 				p.getMarcadorLocal(), p.getMarcadorVisitante(), p.getLocalId());
-}
-	public static Partido toEntity(Partido e) {
+	}
+	public static Partido toEntity(PartidoRecord e) {
 		if (e == null)
 			return null;
 	
@@ -21,4 +21,3 @@ public class PartidoMapper {
 		
 		return p;
 	}
-}
