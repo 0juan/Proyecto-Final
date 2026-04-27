@@ -1,36 +1,22 @@
 package co.edu.unbosque.record;
 
-import java.time.LocalDate;
 
 public class EstadioDTO {
-	private short idEstadio;
+
 	private String nombreEstadio;
 	private int capacidadEstadio;
-	private int tamanoEstadio;
 	private String ciudadEstadio;
-	private String tipoEstadio;
-	private LocalDate fechaFundacionEstadio; // como String para el input (YYYY-MM-DD)
 	private boolean estadoEstadio;
+	private String paisEstadio;
 
-	public EstadioDTO(short idEstadio, String nombreEstadio, int capacidadEstadio, int tamanoEstadio,
-			String ciudadEstadio, String tipoEstadio, LocalDate fechaFundacionEstadio, boolean estadoEstadio) {
+	public EstadioDTO( String nombreEstadio, int capacidadEstadio, 
+			String ciudadEstadio, String paisEstadio,  boolean estadoEstadio) {
 
-		this.idEstadio = idEstadio;
 		this.nombreEstadio = nombreEstadio;
 		this.capacidadEstadio = capacidadEstadio;
-		this.tamanoEstadio = tamanoEstadio;
 		this.ciudadEstadio = ciudadEstadio;
-		this.tipoEstadio = tipoEstadio;
-		this.fechaFundacionEstadio = fechaFundacionEstadio;
 		this.estadoEstadio = estadoEstadio;
-	}
-
-	public short getIdEstadio() {
-		return idEstadio;
-	}
-
-	public void setIdEstadio(short idEstadio) {
-		this.idEstadio = idEstadio;
+		this.paisEstadio = paisEstadio;
 	}
 
 	public String getNombreEstadio() {
@@ -41,20 +27,20 @@ public class EstadioDTO {
 		this.nombreEstadio = nombreEstadio;
 	}
 
+	public String getPaisEstadio() {
+		return paisEstadio;
+	}
+
+	public void setPaisEstadio(String paisEstadio) {
+		this.paisEstadio = paisEstadio;
+	}
+
 	public int getCapacidadEstadio() {
 		return capacidadEstadio;
 	}
 
 	public void setCapacidadEstadio(int capacidadEstadio) {
 		this.capacidadEstadio = capacidadEstadio;
-	}
-
-	public int getTamanoEstadio() {
-		return tamanoEstadio;
-	}
-
-	public void setTamanoEstadio(int tamanoEstadio) {
-		this.tamanoEstadio = tamanoEstadio;
 	}
 
 	public String getCiudadEstadio() {
@@ -65,22 +51,6 @@ public class EstadioDTO {
 		this.ciudadEstadio = ciudadEstadio;
 	}
 
-	public String getTipoEstadio() {
-		return tipoEstadio;
-	}
-
-	public void setTipoEstadio(String tipoEstadio) {
-		this.tipoEstadio = tipoEstadio;
-	}
-
-	public LocalDate getFechaFundacionEstadio() {
-		return fechaFundacionEstadio;
-	}
-
-	public void setFechaFundacionEstadio(LocalDate fechaFundacionEstadio) {
-		this.fechaFundacionEstadio = fechaFundacionEstadio;
-	}
-
 	public boolean isEstadoEstadio() {
 		return estadoEstadio;
 	}
@@ -88,5 +58,6 @@ public class EstadioDTO {
 	public void setEstadoEstadio(boolean estadoEstadio) {
 		this.estadoEstadio = estadoEstadio;
 	}
+
 
 }
