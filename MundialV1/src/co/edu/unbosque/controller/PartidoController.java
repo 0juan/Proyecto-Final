@@ -21,12 +21,12 @@ public class PartidoController {
 		Partido[] entidades = repo.listar();
 		PartidoRecord[] dtos = new PartidoRecord[entidades.length];
 		for (int i = 0; i < entidades.length; i++)
-			dtos[i] = PartidoMapper.toDTO(entidades[i]);
+			dtos[i] = PartidoMapper.toRecord(entidades[i]);
 		return dtos;
 	}
 
 	public PartidoRecord buscarPorId(int id) {
-		return PartidoMapper.toDTO(repo.buscarPorId(id));
+		return PartidoMapper.toRecord(repo.buscarPorId(id));
 	}
 
 	public int capacidadTotal() {
