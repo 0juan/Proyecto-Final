@@ -3,7 +3,8 @@ package co.edu.unbosque.controller;
 import co.edu.unbosque.mapper.PersonaMapper;
 import co.edu.unbosque.model.Persona;
 import co.edu.unbosque.model.PersonaRepositoryArray;
-import co.edu.unbosque.record.PersonaDTO;
+import co.edu.unbosque.re
+cord.PersonaDTO;
 
 public class PersonaController {
 	private final PersonaRepositoryArray repo;
