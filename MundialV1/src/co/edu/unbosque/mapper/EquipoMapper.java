@@ -1,23 +1,51 @@
 package co.edu.unbosque.mapper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import co.edu.unbosque.model.Equipo;
-import co.edu.unbosque.record.EquipoDTO;
+import co.edu.unbosque.model.Futbolista;
+import co.edu.unbosque.record.EquipoRecord;
 
-public class EquipoMapper { // DTO --- Entidad
+public final class EquipoMapper {
 
-	public static Equipo toEntity(EquipoDTO dto) {
-		if (dto == null)
-			return null;
-
-		return new Equipo(dto.getIdEquipo(), dto.getNombreEquipo(), dto.getCategoriaEquipo(), dto.getCiudadEquipo(),
-				dto.isEstadoEquipo(), dto.getFechaFundacionEquipo());
+	private EquipoMapper() {
 	}
 
-	public static EquipoDTO toDTO(Equipo e) {
-		if (e == null)
-			return null;
+	public static Equipo toEntity(EquipoRecord record) {
+		Equipo entidad = new Equipo();
+		entidad.setIdEquipo(record.idEquipo());
+		entidad.setNombreEquipo(record.nombreEquipo());
+		entidad.setDirectorEquipo(record.directorEquipo());
+		entidad.setFechaFundacionEquipo(record.fechaFundacionEquipo());
+		entidad.setCategoriaEquipo(record.categoriaEquipo());
+		entidad.setPaisEquipo(record.pais());
+		entidad.setEstadoEquipo(record.estadoEquipo());
 
-		return new EquipoDTO(e.getIdEquipo(), e.getNombreEquipo(), e.getCategoriaEquipo(), e.getCiudadEquipo(),
-				e.isEstadoEquipo(), e.getFechaFundacionEquipo());
+		List<Futbolista> listaFutbolistas = new ArrayList<>();
+		if (record.listaIdsJugadores() != null) {
+			for (String idJugador : record.listaIdsJugadores()) {
+				Futbolista f = new Futbolista();
+				f.setIdFutbolista(idJugador);
+				listaFutbolistas.add(f);
+			}
+		}
+		entidad.setJugadores(listaFutbolistas);
+
+		return entidad;
+	}
+
+	public static EquipoRecord toRecord(Equipo entidad) {
+		List<String> listaIds = new ArrayList<>();
+
+		if (entidad.getJugadores() != null) {
+			for (Futbolista f : entidad.getJugadores()) {
+				listaIds.add(f.getIdFutbolista());
+			}
+		}
+
+		return new EquipoRecord(entidad.getIdEquipo(), entidad.getNombreEquipo(), entidad.getDirectorEquipo(), listaIds,
+				entidad.getFechaFundacionEquipo(), entidad.getCategoriaEquipo(), entidad.getPaisEquipo(),
+				entidad.isEstadoEquipo());
 	}
 }

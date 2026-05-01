@@ -1,24 +1,20 @@
 package co.edu.unbosque.mapper;
 
 import co.edu.unbosque.model.Estadio;
-import co.edu.unbosque.record.EstadioDTO;
+import co.edu.unbosque.record.EstadioRecord;
 
-public class EstadioMapper { 
+public final class EstadioMapper {
 
-	public static Estadio toEntity(EstadioDTO dto) {
-		if (dto == null)
-			return null;
-
-		return new Estadio(dto.getNombreEstadio(), dto.getCapacidadEstadio(),
-				 dto.getCiudadEstadio(),
-				 dto.getPaisEstadio(), dto.isEstadoEstadio());
+	private EstadioMapper() {
 	}
 
-	public static EstadioDTO toDTO(Estadio e) {
-		if (e == null)
-			return null;
+	public static Estadio toEntity(EstadioRecord e) {
+		return new Estadio(e.idEstadio(), e.nombreEstadio(), e.capacidadEstadio(), e.ciudadEstadio(), e.paisEstadio(),
+				e.estadoEstadio());
+	}
 
-		return new EstadioDTO( e.getNombreEstadio(), e.getCapacidadEstadio(), 
-				e.getCiudadEstadio(), e.getPaisEstadio(), e.isEstadoEstadio());
+	public static EstadioRecord toRecord(Estadio estadio) {
+		return new EstadioRecord(estadio.getIdEstadio(), estadio.getNombreEstadio(), estadio.getCapacidadEstadio(),
+				estadio.getCiudadEstadio(), estadio.getPaisEstadio(), estadio.isEstadoEstadio());
 	}
 }

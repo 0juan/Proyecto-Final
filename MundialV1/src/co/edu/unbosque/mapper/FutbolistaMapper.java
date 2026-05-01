@@ -3,29 +3,17 @@ package co.edu.unbosque.mapper;
 import co.edu.unbosque.model.Futbolista;
 import co.edu.unbosque.record.FutbolistaRecord;
 
-public class FutbolistaMapper {
+public final class FutbolistaMapper {
 
-	public FutbolistaRecord toRecord(Futbolista f) {
-
-		if (f == null)
-			return null;
-
-		return new FutbolistaRecord(f.getId(), f.getNombre(), f.getEdad(), f.getNumero(), f.getPosicion(),
-				f.isEstado());
+	private FutbolistaMapper() {
 	}
 
-	public Futbolista toEntity(FutbolistaRecord f) {
+	public static Futbolista toEntity(FutbolistaRecord f) {
+		return new Futbolista(f.idFutbolista(), f.nombre(), f.edad(), f.numero(), f.posicion(), f.estado());
+	}
 
-		    if (f == null)
-		        return null;
-
-		    return new Futbolista(
-		        f.id(),
-		        f.nombre(),
-		        f.edad(),
-		        f.numero(),
-		        f.posicion(),
-		        f.estado()
-		    );
-		}
+	public static FutbolistaRecord toRecord(Futbolista futbolista) {
+		return new FutbolistaRecord(futbolista.getIdFutbolista(), futbolista.getNombre(), futbolista.getEdad(),
+				futbolista.getNumero(), futbolista.getPosicion(), futbolista.isEstado());
+	}
 }

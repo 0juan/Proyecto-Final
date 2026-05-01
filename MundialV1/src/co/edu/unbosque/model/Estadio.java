@@ -1,21 +1,30 @@
 package co.edu.unbosque.model;
 
 public class Estadio {
-	
+
+	private String idEstadio;
 	private String nombreEstadio;
 	private int capacidadEstadio;
 	private String ciudadEstadio;
-	private String paisEstadio; 
+	private String paisEstadio;
 	private boolean estadoEstadio;
 
-	public Estadio( String nombreEstadio, int capacidadEstadio,  String ciudadEstadio,
-			String b, boolean i) {
-		
+	public Estadio(String idEstadio, String nombreEstadio, int capacidadEstadio, String ciudadEstadio,
+			String paisEstadio, boolean estadoEstadio) {
+		this.idEstadio = idEstadio;
 		this.nombreEstadio = nombreEstadio;
 		this.capacidadEstadio = capacidadEstadio;
 		this.ciudadEstadio = ciudadEstadio;
-		this.paisEstadio = b;
-		this.estadoEstadio = i;
+		this.paisEstadio = paisEstadio;
+		this.estadoEstadio = estadoEstadio;
+	}
+
+	public String getIdEstadio() {
+		return idEstadio;
+	}
+
+	public void setIdEstadio(String idEstadio) {
+		this.idEstadio = idEstadio;
 	}
 
 	public String getNombreEstadio() {
@@ -24,15 +33,6 @@ public class Estadio {
 
 	public void setNombreEstadio(String nombreEstadio) {
 		this.nombreEstadio = nombreEstadio;
-	}
-
-	public String getPaisEstadio() {
-		return paisEstadio;
-	}
-
-
-	public void setPaisEstadio(String paisEstadio) {
-		this.paisEstadio = paisEstadio;
 	}
 
 	public int getCapacidadEstadio() {
@@ -49,6 +49,14 @@ public class Estadio {
 
 	public void setCiudadEstadio(String ciudadEstadio) {
 		this.ciudadEstadio = ciudadEstadio;
+	}
+
+	public String getPaisEstadio() {
+		return paisEstadio;
+	}
+
+	public void setPaisEstadio(String paisEstadio) {
+		this.paisEstadio = paisEstadio;
 	}
 
 	public boolean isEstadoEstadio() {

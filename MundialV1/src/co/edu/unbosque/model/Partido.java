@@ -3,11 +3,12 @@ package co.edu.unbosque.model;
 import java.time.LocalDate;
 
 public class Partido {
+	private String idPartido;
 	private String equipoLocalId;
 	private String equipoVisitanteId;
 	private LocalDate fechaPartido;
 	private boolean estadoPartido;
-	private String tipoDePatido;
+	private String tipoDePartido;
 	private String fase;
 	private int marcadorLocal;
 	private int marcadorVisitante;
@@ -15,12 +16,12 @@ public class Partido {
 
 	public Partido(String equipoLocalId, String equipoVisitanteId, LocalDate fechaPartido, boolean estadoPartido,
 			String tipoDePatido, String fase, int marcadorLocal, int marcadorVisitante, int localId) {
-		super();
+
 		this.equipoLocalId = equipoLocalId;
 		this.equipoVisitanteId = equipoVisitanteId;
 		this.fechaPartido = fechaPartido;
 		this.estadoPartido = estadoPartido;
-		this.tipoDePatido = tipoDePatido;
+		this.tipoDePartido = tipoDePatido;
 		this.fase = fase;
 		this.marcadorLocal = marcadorLocal;
 		this.marcadorVisitante = marcadorVisitante;
@@ -60,12 +61,12 @@ public class Partido {
 		this.estadoPartido = estadoPartido;
 	}
 
-	public String getTipoDePatido() {
-		return tipoDePatido;
+	public String getTipoDePartido() {
+		return tipoDePartido;
 	}
 
-	public void setTipoDePatido(String tipoDePatido) {
-		this.tipoDePatido = tipoDePatido;
+	public void setTipoDePartido(String tipoDePatido) {
+		this.tipoDePartido = tipoDePatido;
 	}
 
 	public String getFase() {
@@ -98,6 +99,14 @@ public class Partido {
 
 	public void setLocalId(int localId) {
 		this.localId = localId;
+	}
+
+	public String getIdPartido() {
+		return idPartido;
+	}
+
+	public void setIdPartido(String idPartido) {
+		this.idPartido = idPartido;
 	}
 
 }

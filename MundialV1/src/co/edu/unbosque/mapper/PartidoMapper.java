@@ -1,26 +1,21 @@
 package co.edu.unbosque.mapper;
 
-import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.Partido;
-import co.edu.unbosque.record.*;
+import co.edu.unbosque.record.PartidoRecord;
 
-public class PartidoMapper {
-	public static Partido toEntity(Partido p) {
-		if (p == null)
-			return null;
+public final class PartidoMapper {
 
-		return new Partido(p.getEquipoLocalId(), p.getEquipoVisitanteId(), p.getFechaPartido(),
-				p.isEstadoPartido(), p.getTipoDePatido(), p.getFase(), p.getMarcadorLocal(), p.getMarcadorVisitante(),
-				p.getLocalId());
-
+	private PartidoMapper() {
 	}
 
-	public static Partido toRecord(PartidoRecord e) {
-		if (e == null)
-			return null;
-		return new Partido(	e.getEquipoLocalId(), e.getEquipoVisitanteId(), e.getFechaPartido(),
-				e.isEstadoPartido(), e.getTipoDePatido(), e.getFase(), e.getMarcadorLocal(), e.getMarcadorVisitante(),
-				e.getLocalId());
+	public static Partido toEntity(PartidoRecord p) {
+		return new Partido(p.equipoLocalId(), p.equipoVisitanteId(), p.fechaPartido(), p.estadoPartido(),
+				p.tipoDePartido(), p.fase(), p.marcadorLocal(), p.marcadorVisitante(), p.localId());
+	}
 
+	public static PartidoRecord toRecord(Partido e) {
+		return new PartidoRecord(e.getEquipoLocalId(), e.getEquipoVisitanteId(), e.getFechaPartido(),
+				e.isEstadoPartido(), e.getTipoDePartido(), e.getFase(), e.getMarcadorLocal(), e.getMarcadorVisitante(),
+				e.getLocalId());
 	}
 }
