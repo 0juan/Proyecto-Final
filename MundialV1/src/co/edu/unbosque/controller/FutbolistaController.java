@@ -1,5 +1,5 @@
 package co.edu.unbosque.controller;
 
-public class PartidoController {
+public class FutbolistaController {
 
 }
